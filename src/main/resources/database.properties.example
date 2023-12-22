@@ -1,0 +1,4 @@
+# Database connection configuration
+jdbc.url=jdbc:your_database_type://host:port/your_database_name
+jdbc.username=your_username
+jdbc.password=your_password

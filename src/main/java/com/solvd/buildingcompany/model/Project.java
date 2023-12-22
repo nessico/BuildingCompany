@@ -61,10 +61,4 @@ public class Project {
         this.budget = budget;
     }
 
-
-
-
-
-
-    // Constructors, getters, setters, and other methods as needed
 }

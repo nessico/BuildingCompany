@@ -12,6 +12,7 @@ import java.util.Properties;
 public class ConnectionPool {
     private static final HikariDataSource ds;
 
+    // see database.properties.example to test it out
     static {
         try (InputStream input = ConnectionPool.class
                 .getClassLoader().getResourceAsStream("database.properties")) {

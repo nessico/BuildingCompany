@@ -1,1 +1,9 @@
+database.properties
+*.class
+*.log
+*.jar
+
 target/
+
+.idea/
+
