@@ -43,7 +43,7 @@ public class ProjectDao {
                 projects.add(project);
             }
         } catch (SQLException e) {
-            e.printStackTrace(); // Replace with more robust error handling
+            e.printStackTrace();
         }
 
         return projects;
