@@ -1,0 +1,27 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.solvd.buildingcompany.dao.mybatis.ClientMapper">
+
+    <select id="getClientById" resultType="com.solvd.buildingcompany.model.Client">
+        SELECT * FROM Clients WHERE client_id = #{id}
+    </select>
+
+    <select id="getAllClients" resultType="com.solvd.buildingcompany.model.Client">
+        SELECT * FROM Clients
+    </select>
+
+    <insert id="insertClient">
+        INSERT INTO Clients (client_name, contact_info)
+        VALUES (#{clientName}, #{contactInfo})
+    </insert>
+
+    <update id="updateClient">
+        UPDATE Clients
+        SET client_name = #{clientName}, contact_info = #{contactInfo}
+        WHERE client_id = #{clientId}
+    </update>
+
+    <delete id="deleteClient">
+        DELETE FROM Clients WHERE client_id = #{clientId}
+    </delete>
+
+</mapper>

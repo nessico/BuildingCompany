@@ -1,0 +1,27 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.solvd.buildingcompany.dao.mybatis.ProjectMapper">
+
+    <select id="getProjectById" resultType="com.solvd.buildingcompany.model.Project">
+        SELECT * FROM Projects WHERE project_id = #{id}
+    </select>
+
+    <select id="getAllProjects" resultType="com.solvd.buildingcompany.model.Project">
+        SELECT * FROM Projects
+    </select>
+
+    <insert id="insertProject">
+        INSERT INTO Projects (name, start_date, end_date, budget)
+        VALUES (#{name}, #{startDate}, #{endDate}, #{budget})
+    </insert>
+
+    <update id="updateProject">
+        UPDATE Projects
+        SET name = #{name}, start_date = #{startDate}, end_date = #{endDate}, budget = #{budget}
+        WHERE project_id = #{projectId}
+    </update>
+
+    <delete id="deleteProject">
+        DELETE FROM Projects WHERE project_id = #{projectId}
+    </delete>
+
+</mapper>
