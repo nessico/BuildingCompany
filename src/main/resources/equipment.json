@@ -1,0 +1,15 @@
+{
+  "equipment": [
+    {
+      "equipment_id": 1,
+      "equipment_name": "Crane",
+      "maintenance_date": "2023-07-16"
+    },
+    {
+      "equipment_id": 2,
+      "equipment_name": "Bulldozer",
+      "maintenance_date": "2023-08-24"
+    }
+
+  ]
+}

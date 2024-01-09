@@ -1,9 +1,16 @@
-package com.solvd.buildingcompany.main;
+package com.solvd.buildingcompany;
 
+import com.solvd.buildingcompany.model.Equipment;
+import com.solvd.buildingcompany.model.Material;
 import com.solvd.buildingcompany.model.Project;
+import com.solvd.buildingcompany.model.Supplier;
 import com.solvd.buildingcompany.service.ProjectManagementService;
+import com.solvd.buildingcompany.util.EquipmentJsonUtil;
+import com.solvd.buildingcompany.util.parser.MaterialJAXBParser;
+import com.solvd.buildingcompany.util.parser.SupplierSAXParserUtil;
 
 import java.util.Date;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,5 +37,44 @@ public class Main {
         service.getAllProjects().forEach(project ->
                 System.out.println("Project: " + project.getName() + ", Budget: " + project.getBudget())
         );
+
+
+        String xmlFilePath = "src/main/resources/suppliers.xml";
+
+        // Parse suppliers from XML file using SAX parser
+        List<Supplier> suppliers = SupplierSAXParserUtil.parseSuppliers(xmlFilePath);
+
+        // Print out the parsed suppliers
+        for (Supplier supplier : suppliers) {
+            System.out.println(supplier);
+        }
+
+
+        MaterialJAXBParser parser = new MaterialJAXBParser();
+        String xmlFilePath = "src/main/resources/materials.xml";
+
+        // Unmarshalling (Reading)
+        List<Material> materialList = parser.unmarshalMaterials(xmlFilePath);
+        for (Material material : materialList) {
+            System.out.println(material);
+        }
+
+        // Marshalling (Writing)
+        // modify material or create a new list of materials, then write it back to XML
+        parser.marshalMaterials(materialList, xmlFilePath);
+
+        String jsonFilePath = "src/main/resources/equipment.json";
+
+        // Read equipment from JSON file
+        List<Equipment> equipment = EquipmentJsonUtil.readEquipment(jsonFilePath);
+        equipment.forEach(System.out::println);
+
+        // Modify the equipment list or add new equipment
+        equipment.add(new Equipment(3, "Loader", new Date()));
+
+        // Write equipment back to JSON file
+        EquipmentJsonUtil.writeEquipment(jsonFilePath, equipment);
+
     }
+
 }

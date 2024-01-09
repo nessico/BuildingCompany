@@ -1,0 +1,10 @@
+<materials>
+    <material materialId="1">
+        <materialName>Cement</materialName>
+        <supplierId>1</supplierId>
+    </material>
+    <material materialId="2">
+        <materialName>Steel Beams</materialName>
+        <supplierId>2</supplierId>
+    </material>
+</materials>

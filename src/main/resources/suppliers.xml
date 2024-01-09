@@ -1,0 +1,10 @@
+<suppliers>
+    <supplier supplierId="1">
+        <supplierName>ABC Supplies</supplierName>
+        <contactInfo>contact@abc.com</contactInfo>
+    </supplier>
+    <supplier supplierId="2">
+        <supplierName>XYZ Materials</supplierName>
+        <contactInfo>info@xyz.com</contactInfo>
+    </supplier>
+</suppliers>
