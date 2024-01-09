@@ -1,7 +1,7 @@
 package com.solvd.buildingcompany.util.parser;
 
 import com.solvd.buildingcompany.model.Material;
-import jdk.internal.org.xml.sax.SAXException;
+import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;

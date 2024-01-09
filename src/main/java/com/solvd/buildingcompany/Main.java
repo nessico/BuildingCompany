@@ -39,10 +39,10 @@ public class Main {
         );
 
 
-        String xmlFilePath = "src/main/resources/suppliers.xml";
+        String xmlSupplierFilePath = "src/main/resources/suppliers.xml";
 
         // Parse suppliers from XML file using SAX parser
-        List<Supplier> suppliers = SupplierSAXParserUtil.parseSuppliers(xmlFilePath);
+        List<Supplier> suppliers = SupplierSAXParserUtil.parseSuppliers(xmlSupplierFilePath);
 
         // Print out the parsed suppliers
         for (Supplier supplier : suppliers) {
@@ -51,17 +51,17 @@ public class Main {
 
 
         MaterialJAXBParser parser = new MaterialJAXBParser();
-        String xmlFilePath = "src/main/resources/materials.xml";
+        String xmlMaterialFilePath = "src/main/resources/materials.xml";
 
         // Unmarshalling (Reading)
-        List<Material> materialList = parser.unmarshalMaterials(xmlFilePath);
+        List<Material> materialList = parser.unmarshalMaterials(xmlMaterialFilePath);
         for (Material material : materialList) {
             System.out.println(material);
         }
 
         // Marshalling (Writing)
         // modify material or create a new list of materials, then write it back to XML
-        parser.marshalMaterials(materialList, xmlFilePath);
+        parser.marshalMaterials(materialList, xmlMaterialFilePath);
 
         String jsonFilePath = "src/main/resources/equipment.json";
 
