@@ -4,7 +4,7 @@ import com.solvd.buildingcompany.model.Equipment;
 import com.solvd.buildingcompany.model.Material;
 import com.solvd.buildingcompany.model.Project;
 import com.solvd.buildingcompany.model.Supplier;
-import com.solvd.buildingcompany.service.ProjectManagementService;
+import com.solvd.buildingcompany.service.impl.ProjectManagementServiceImpl;
 import com.solvd.buildingcompany.util.EquipmentJsonUtil;
 import com.solvd.buildingcompany.util.parser.MaterialJAXBParser;
 import com.solvd.buildingcompany.util.parser.SupplierSAXParserUtil;
@@ -14,7 +14,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        ProjectManagementService service = new ProjectManagementService();
+        ProjectManagementServiceImpl service = new ProjectManagementServiceImpl();
 
         // Adding a new project
         Project newProject = new Project();

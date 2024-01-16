@@ -1,8 +1,8 @@
 package com.solvd.buildingcompany.config;
 
-import com.solvd.buildingcompany.dao.ClientDao;
-import com.solvd.buildingcompany.dao.EmployeeDao;
-import com.solvd.buildingcompany.dao.ProjectDao;
+import com.solvd.buildingcompany.dao.impl.ClientDaoImpl;
+import com.solvd.buildingcompany.dao.impl.EmployeeDaoImpl;
+import com.solvd.buildingcompany.dao.impl.ProjectDaoImpl;
 import com.solvd.buildingcompany.dao.mybatis.ClientMapper;
 import com.solvd.buildingcompany.dao.mybatis.EmployeeMapper;
 import com.solvd.buildingcompany.dao.mybatis.ProjectMapper;
@@ -30,30 +30,30 @@ public class DaoFactory {
         }
     }
 
-    public static ClientDao getClientDao() {
+    public static ClientDaoImpl getClientDao() {
         if (sqlSessionFactory != null) {
             SqlSession session = sqlSessionFactory.openSession();
-            return (ClientDao) session.getMapper(ClientMapper.class);
+            return (ClientDaoImpl) session.getMapper(ClientMapper.class);
         } else {
-            return new ClientDao();
+            return new ClientDaoImpl();
         }
     }
 
-    public static EmployeeDao getEmployeeDao() {
+    public static EmployeeDaoImpl getEmployeeDao() {
         if (sqlSessionFactory != null) {
             SqlSession session = sqlSessionFactory.openSession();
-            return (EmployeeDao) session.getMapper(EmployeeMapper.class);
+            return (EmployeeDaoImpl) session.getMapper(EmployeeMapper.class);
         } else {
-            return new EmployeeDao();
+            return new EmployeeDaoImpl();
         }
     }
 
-    public static ProjectDao getProjectDao() {
+    public static ProjectDaoImpl getProjectDao() {
         if (sqlSessionFactory != null) {
             SqlSession session = sqlSessionFactory.openSession();
-            return (ProjectDao) session.getMapper(ProjectMapper.class);
+            return (ProjectDaoImpl) session.getMapper(ProjectMapper.class);
         } else {
-            return new ProjectDao();
+            return new ProjectDaoImpl();
         }
     }
 
